@@ -6,3 +6,8 @@ Clinical Semantic Textual Similarity (ClinicalSTS) measures the degree of simila
 Current three models are transplanted into a distributed system to cope with the big data challenge. This project has brought up two types of mechanism, one is data parallelism, and another is model parallelism. Data parallelism is deployed on Spark, model parallelism is on HPC (Spartan). 
 
 ===The dataset is confidential, it is not allowed to share with public===
+
+
+本项目为分析医疗系统中语义文本相似性，采用了全连接深度学习网络，ABCNN和LSTM。三种模型精度大致分布于80%~85%。由于样本数量级偏小，模型的选择不够明朗，最终采用集成学习（ensemble）的方式，将三种网络的输出整合在一起。
+HPC文件中涵盖了在Spartan上放置模型的脚本，用.slurm文件安排不同模型布置在不同节点上，以达到效率最大化。
+数据集由BioCreative/OHNLP所提供，不开放给公众。
